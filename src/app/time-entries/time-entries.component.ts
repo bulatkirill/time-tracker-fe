@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TimeEntryService} from '../service/time-entry/time-entry.service';
 
 @Component({
   selector: 'app-time-entries',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeEntriesComponent implements OnInit {
 
-  constructor() { }
+  timeEntries: TimeEntry[] = [];
+
+  constructor(private timeEntryService: TimeEntryService) {
+  }
 
   ngOnInit() {
+    this.timeEntryService.getTimeEntries().subscribe((timeEntries: TimeEntry[]) => {
+      this.timeEntries = timeEntries;
+    });
   }
 
 }

@@ -6,6 +6,12 @@
           Header
         </div>
       </div>
+      <div class="row" *ngFor="let timeEntry of timeEntries">
+        <div class="col-md-6">{{timeEntry.host}}</div>
+        <div class="col-md-2">{{timeEntry.dateOpen}}</div>
+        <div class="col-md-2">{{timeEntry.dateClosed}}</div>
+        <div class="col-md-2">{{timeEntry.tabId}}</div>
+      </div>
       <div class="row">
         <div class="col-md-6">https://developer.chrome.com/extensions/xhr</div>
         <div class="col-md-2">17:59:21</div>
