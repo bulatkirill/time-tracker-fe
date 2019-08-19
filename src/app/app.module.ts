@@ -6,12 +6,16 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {TimeEntriesComponent} from './time-entries/time-entries.component';
 import {HttpClientModule} from '@angular/common/http';
+import { TimeEntryListComponent } from './common/time-entry-list/time-entry-list.component';
+import { TimeEntryRowComponent } from './common/time-entry-list/time-entry-row/time-entry-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TimeEntriesComponent
+    TimeEntriesComponent,
+    TimeEntryListComponent,
+    TimeEntryRowComponent
   ],
   imports: [
     BrowserModule,
