@@ -17,8 +17,7 @@ export class TimeEntryListComponent implements OnInit {
   @Input()
   set timeEntriesInput(timeEntries: TimeEntry[]) {
     timeEntries.forEach(value => {
-      // TODO change place of converting string to date, should be done on lower level somewhere in service
-      const dateOpen = new Date(value.dateOpen).toDateString();
+      const dateOpen = value.dateOpen.toDateString();
       this.parsedTimeEntries[dateOpen] ? this.parsedTimeEntries[dateOpen].push(value) : this.parsedTimeEntries[dateOpen] = [value];
     });
     this.timeEntries = timeEntries;
@@ -33,7 +32,7 @@ export class TimeEntryListComponent implements OnInit {
   keyAscOrder(a: KeyValue<string, TimeEntry[]>, b: KeyValue<string, TimeEntry[]>): number {
     const dateFirst = new Date(a.key);
     const dateSecond = new Date(b.key);
-    return dateFirst < dateSecond ? -1 : dateFirst === dateSecond ? 0 : 1;
+    return dateFirst > dateSecond ? -1 : dateFirst === dateSecond ? 0 : 1;
   }
 
 }

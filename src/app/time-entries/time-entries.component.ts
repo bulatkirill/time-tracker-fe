@@ -13,7 +13,7 @@ export class TimeEntriesComponent implements OnInit {
   constructor(private timeEntryService: TimeEntryService) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.timeEntryService.getTimeEntries().subscribe((timeEntries: TimeEntry[]) => {
       this.timeEntries = timeEntries;
     });

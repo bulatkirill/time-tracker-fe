@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Time Entry Detail</h4>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title"
+          (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>This part is the place for the detail of the time entry and probably editing mode</p>
+  <p>I'm working with data from passed timeEntry:</p>
+  <ul>
+    <li>id {{timeEntry.id}}</li>
+    <li>host {{timeEntry.host}}</li>
+    <li>tab id {{timeEntry.tabId}}</li>
+    <li>open date {{timeEntry.dateOpen | date:'mediumTime'}}</li>
+    <li>close date {{timeEntry.dateClosed | date:'mediumTime'}}</li>
+  </ul>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('cancel click')">Cancel</button>
+  <button type="button" ngbAutofocus class="btn btn-success" (click)="activeModal.close('Ok click')">Save</button>
+</div>

@@ -6,8 +6,10 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {TimeEntriesComponent} from './time-entries/time-entries.component';
 import {HttpClientModule} from '@angular/common/http';
-import { TimeEntryListComponent } from './common/time-entry-list/time-entry-list.component';
-import { TimeEntryRowComponent } from './common/time-entry-list/time-entry-row/time-entry-row.component';
+import {TimeEntryListComponent} from './common/time-entry-list/time-entry-list.component';
+import {TimeEntryRowComponent} from './common/time-entry-list/time-entry-row/time-entry-row.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {TimeEntryDetailModalComponent} from './common/time-entry-list/time-entry-detail-modal/time-entry-detail-modal.component';
 
 @NgModule({
   declarations: [
@@ -15,15 +17,20 @@ import { TimeEntryRowComponent } from './common/time-entry-list/time-entry-row/t
     NavbarComponent,
     TimeEntriesComponent,
     TimeEntryListComponent,
-    TimeEntryRowComponent
+    TimeEntryRowComponent,
+    TimeEntryDetailModalComponent,
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    TimeEntryDetailModalComponent
+  ]
 })
 export class AppModule {
 }

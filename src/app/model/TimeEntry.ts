@@ -5,4 +5,6 @@ interface TimeEntry {
   dateClosed: Date;
   fullUrl: string;
   host: string;
+  createdAt: Date;
+  updatedAt: Date;
 }

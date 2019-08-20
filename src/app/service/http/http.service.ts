@@ -12,7 +12,7 @@ export class HttpService {
   constructor(private httpClient: HttpClient) {
   }
 
-  get(path: string): Observable<TimeEntry[]> {
-    return this.httpClient.get<TimeEntry[]>(`${this.SERVER_URL}${path}`);
+  get(path: string): Observable<any> {
+    return this.httpClient.get(`${this.SERVER_URL}${path}`);
   }
 }

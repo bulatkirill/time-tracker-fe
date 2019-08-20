@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpService} from '../http/http.service';
 import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 
 @Injectable({
@@ -12,6 +13,20 @@ export class TimeEntryService {
   }
 
   getTimeEntries(): Observable<TimeEntry[]> {
-    return this.httpService.get('timeEntry');
+    const timeEntries = this.httpService.get('timeEntry');
+    return timeEntries.pipe(
+      map((data: TimeEntry[]) => {
+        data.forEach(this.dateMapper);
+        return data;
+      })
+    );
   }
+
+  private dateMapper(timeEntry) {
+    timeEntry.dateOpen = new Date(timeEntry.dateOpen);
+    timeEntry.dateClosed = new Date(timeEntry.dateClosed);
+    timeEntry.updatedAt = new Date(timeEntry.updatedAt);
+    timeEntry.createdAt = new Date(timeEntry.createdAt);
+  }
+
 }
