@@ -18,5 +18,5 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('cancel click')">Cancel</button>
-  <button type="button" ngbAutofocus class="btn btn-success" (click)="activeModal.close('Ok click')">Save</button>
+  <button type="button" ngbAutofocus class="btn btn-success" (click)="saveTimeEntry(); activeModal.close('Ok click')">Save</button>
 </div>

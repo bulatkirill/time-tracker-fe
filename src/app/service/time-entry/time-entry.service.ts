@@ -22,6 +22,16 @@ export class TimeEntryService {
     );
   }
 
+  updateTimeEntry(timeEntry: TimeEntry): Observable<TimeEntry> {
+    const updatedTimeEntry = this.httpService.patch(`timeEntry/${timeEntry.id}`, JSON.stringify(timeEntry));
+    return updatedTimeEntry.pipe(
+      map((data: TimeEntry) => {
+        this.dateMapper(data);
+        return data;
+      })
+    );
+  }
+
   private dateMapper(timeEntry) {
     timeEntry.dateOpen = new Date(timeEntry.dateOpen);
     timeEntry.dateClosed = new Date(timeEntry.dateClosed);
