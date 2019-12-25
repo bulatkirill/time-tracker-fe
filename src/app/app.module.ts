@@ -12,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TimeEntryDetailModalComponent} from './common/time-entry-list/time-entry-detail-modal/time-entry-detail-modal.component';
 import { DevicesComponent } from './devices/devices.component';
 import { DeviceListComponent } from './common/device-list/device-list.component';
+import { DeviceDetailComponent } from './device-detail/device-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DeviceListComponent } from './common/device-list/device-list.component'
     TimeEntryDetailModalComponent,
     DevicesComponent,
     DeviceListComponent,
+    DeviceDetailComponent,
   ],
   imports: [
     NgbModule,

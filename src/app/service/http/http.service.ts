@@ -12,7 +12,7 @@ export class HttpService {
     'Content-Type': 'application/json',
   };
 
-  private SERVER_URL = 'http://localhost:5000/';
+  private SERVER_URL = 'http://localhost:3000/';
 
   constructor(private httpClient: HttpClient) {
   }

@@ -1,10 +1,13 @@
 <div *ngFor="let device of devices">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       {{device.id}}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       {{device.name}}
+    </div>
+    <div class="col-md-4">
+      <a [routerLink]="['/devices', device.id]">Detail</a>
     </div>
   </div>
 </div>
