@@ -10,6 +10,7 @@ import {TimeEntryListComponent} from './common/time-entry-list/time-entry-list.c
 import {TimeEntryRowComponent} from './common/time-entry-list/time-entry-row/time-entry-row.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TimeEntryDetailModalComponent} from './common/time-entry-list/time-entry-detail-modal/time-entry-detail-modal.component';
+import { DevicesComponent } from './devices/devices.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {TimeEntryDetailModalComponent} from './common/time-entry-list/time-entry
     TimeEntryListComponent,
     TimeEntryRowComponent,
     TimeEntryDetailModalComponent,
+    DevicesComponent,
   ],
   imports: [
     NgbModule,
