@@ -13,6 +13,9 @@ import {TimeEntryDetailModalComponent} from './common/time-entry-list/time-entry
 import { DevicesComponent } from './devices/devices.component';
 import { DeviceListComponent } from './common/device-list/device-list.component';
 import { DeviceDetailComponent } from './device-detail/device-detail.component';
+import { HomeComponent } from './main/home/home.component';
+import { SidebarComponent } from './main/sidebar/sidebar.component';
+import { SessionsComponent } from './main/sessions/sessions.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { DeviceDetailComponent } from './device-detail/device-detail.component';
     DevicesComponent,
     DeviceListComponent,
     DeviceDetailComponent,
+    HomeComponent,
+    SidebarComponent,
+    SessionsComponent,
   ],
   imports: [
     NgbModule,

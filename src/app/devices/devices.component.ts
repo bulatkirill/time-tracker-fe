@@ -15,7 +15,6 @@ export class DevicesComponent implements OnInit {
 
   async ngOnInit() {
     this.deviceService.getDevices().subscribe((devices: Device[]) => {
-      console.log(devices)
       this.devices = devices;
     });
   }

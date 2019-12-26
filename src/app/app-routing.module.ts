@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {TimeEntriesComponent} from './time-entries/time-entries.component';
 import {DevicesComponent} from './devices/devices.component';
 import {DeviceDetailComponent} from "./device-detail/device-detail.component";
+import {HomeComponent} from "./main/home/home.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: 'devices/:id', component: DeviceDetailComponent
+  },
+  {
+    path: 'home', component: HomeComponent
   }
 ];
 
