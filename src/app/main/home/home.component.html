@@ -5,7 +5,8 @@
       <app-sidebar (selectedBrowserEmitter)="onSelectedBrowser($event)"></app-sidebar>
     </div>
     <div class="col-md-2">
-      <app-sessions [browserId]="getSelectedBrowserId()"></app-sessions>
+      <app-sessions [browserId]="getSelectedBrowserId()"
+                    (selectedSessionEmitter)="onSelectedSession($event)"></app-sessions>
     </div>
     <div class="col-md-4">
       <div id="content">

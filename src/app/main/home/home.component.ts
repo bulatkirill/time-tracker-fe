@@ -8,10 +8,15 @@ import {Component, OnInit} from '@angular/core';
 export class HomeComponent implements OnInit {
 
   selectedBrowser: Browser;
+  selectedSession: Session;
 
   onSelectedBrowser(selectedBrowser: Browser) {
-    console.log('Log in parent component');
     this.selectedBrowser = selectedBrowser;
+  }
+
+  onSelectedSession(selectedSession: Session) {
+    console.log(`Session = ${selectedSession.id} is selected and propagated to parent component`);
+    this.selectedSession = selectedSession;
   }
 
   constructor() {
@@ -21,7 +26,6 @@ export class HomeComponent implements OnInit {
   }
 
   getSelectedBrowserId(): number {
-    console.log(this.selectedBrowser);
     return this.selectedBrowser != null ? this.selectedBrowser.id : null;
   }
 

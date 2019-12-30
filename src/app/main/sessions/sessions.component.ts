@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {SessionService} from '../../service/session/session.service';
 
 @Component({
@@ -11,6 +11,9 @@ export class SessionsComponent implements OnInit, OnChanges {
   sessions: Session[] = [];
 
   @Input() browserId: number;
+
+  @Output() selectedSessionEmitter = new EventEmitter<Session>();
+
 
   constructor(private sessionService: SessionService) {
   }
@@ -32,6 +35,12 @@ export class SessionsComponent implements OnInit, OnChanges {
     if (browserId != null) {
       this.sessionService.getSessionsByBrowserId(browserId).subscribe((sessions: Session[]) => {
         this.sessions = sessions;
+        for (const session of sessions) {
+          if (session.tabs != null && session.tabs.length !== 0) {
+            this.selectedSessionEmitter.emit(session);
+            break;
+          }
+        }
       });
     }
   }
