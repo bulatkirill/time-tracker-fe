@@ -2,15 +2,15 @@
   <div class="sidebar-header">
     <h3>Devices</h3>
   </div>
-  <ul class="list-unstyled components">
+  <ul class="list-unstyled">
     <li *ngFor="let device of devices">
-      <a *ngIf="device.browsers.length === 0; else browsers" href="#">{{device.name}}</a>
+      <button *ngIf="device.browsers.length === 0; else browsers" type="button"
+              class="btn btn-link">{{device.name}}</button>
       <ng-template #browsers>
-        <a href="#collapse{{device.id}}" data-toggle="collapse" aria-expanded="false"
-           class="dropdown-toggle">{{device.name}}</a>
-        <ul class="collapse list-unstyled" id="collapse{{device.id}}">
+        <button type="button" class="btn btn-link">{{device.name}}</button>
+        <ul>
           <li *ngFor="let browser of device.browsers">
-            <a href="#">{{browser.name}}</a>
+            <button type="button" class="btn btn-link" (click)="onSelectedBrowser(browser)">{{browser.name}}</button>
           </li>
         </ul>
       </ng-template>
