@@ -14,4 +14,8 @@ export class TabService {
     return this.httpService.get(`/sessions/${sessionId}/tabs`);
   }
 
+  createTabForSession(sessionId: number, tab: Tab) {
+    this.httpService.post(`/sessions/${sessionId}/tabs`, JSON.stringify(tab));
+  }
+
 }

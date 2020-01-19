@@ -3,9 +3,27 @@
     <h3>Tabs</h3>
   </div>
 
-  <ul class="list-unstyled">
-    <li *ngFor="let tab of tabs">
-      <button type="button" class="btn btn-link">{{tab.url}}</button>
-    </li>
-  </ul>
+  <div class="row">
+    <div class="col-md-6">Title</div>
+    <div class="col-md-6">URL</div>
+  </div>
+  <div class="row" *ngFor="let tab of tabs">
+    <div class="col-md-6">
+      {{tab.title}}
+    </div>
+    <div class="col-md-6">
+      {{tab.url}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+<!--      <input type="text" class="form-control" placeholder="Title" aria-label="Title" [(ngModel)]="currentTab.title">-->
+    </div>
+    <div class="col-md-5">
+<!--      <input type="text" class="form-control" placeholder="Url" aria-label="Url" [(ngModel)]="currentTab.url">-->
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" (click)="createTab()">Add</button>
+    </div>
+  </div>
 </nav>

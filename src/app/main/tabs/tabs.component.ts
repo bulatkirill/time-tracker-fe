@@ -12,6 +12,8 @@ export class TabsComponent implements OnInit, OnChanges {
 
   @Input() sessionId: number;
 
+  // currentTab: Tab = new Tab();
+
   constructor(private tabService: TabService) {
   }
 
@@ -34,5 +36,11 @@ export class TabsComponent implements OnInit, OnChanges {
         this.tabs = tabs;
       });
     }
+  }
+
+  createTab() {
+    // if (this.currentTab && this.currentTab.title !== '' && this.currentTab.url !== '') {
+    //   this.tabService.createTabForSession(this.sessionId, this.currentTab);
+    // }
   }
 }

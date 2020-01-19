@@ -17,6 +17,7 @@ import { HomeComponent } from './main/home/home.component';
 import { SidebarComponent } from './main/sidebar/sidebar.component';
 import { SessionsComponent } from './main/sessions/sessions.component';
 import { TabsComponent } from './main/tabs/tabs.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TabsComponent } from './main/tabs/tabs.component';
     NgbModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
