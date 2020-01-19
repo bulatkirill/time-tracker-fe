@@ -16,6 +16,7 @@ import { DeviceDetailComponent } from './device-detail/device-detail.component';
 import { HomeComponent } from './main/home/home.component';
 import { SidebarComponent } from './main/sidebar/sidebar.component';
 import { SessionsComponent } from './main/sessions/sessions.component';
+import { TabsComponent } from './main/tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SessionsComponent } from './main/sessions/sessions.component';
     HomeComponent,
     SidebarComponent,
     SessionsComponent,
+    TabsComponent,
   ],
   imports: [
     NgbModule,

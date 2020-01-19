@@ -29,4 +29,8 @@ export class HomeComponent implements OnInit {
     return this.selectedBrowser != null ? this.selectedBrowser.id : null;
   }
 
+  getSelectedSessionId(): number {
+    return this.selectedSession != null ? this.selectedSession.id : null;
+  }
+
 }

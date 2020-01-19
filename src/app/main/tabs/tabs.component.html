@@ -1,0 +1,11 @@
+<nav id="tabs">
+  <div class="tabs-header">
+    <h3>Tabs</h3>
+  </div>
+
+  <ul class="list-unstyled">
+    <li *ngFor="let tab of tabs">
+      <button type="button" class="btn btn-link">{{tab.url}}</button>
+    </li>
+  </ul>
+</nav>

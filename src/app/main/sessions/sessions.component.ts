@@ -35,11 +35,8 @@ export class SessionsComponent implements OnInit, OnChanges {
     if (browserId != null) {
       this.sessionService.getSessionsByBrowserId(browserId).subscribe((sessions: Session[]) => {
         this.sessions = sessions;
-        for (const session of sessions) {
-          if (session.tabs != null && session.tabs.length !== 0) {
-            this.selectedSessionEmitter.emit(session);
-            break;
-          }
+        if (sessions.length !== 0) {
+          this.selectedSessionEmitter.emit(sessions[0]);
         }
       });
     }

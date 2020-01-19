@@ -9,6 +9,7 @@
                     (selectedSessionEmitter)="onSelectedSession($event)"></app-sessions>
     </div>
     <div class="col-md-4">
+      <app-tabs [sessionId]="getSelectedSessionId()"></app-tabs>
       <div id="content">
         <h2>Collapsible Sidebar Using Bootstrap 4</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
